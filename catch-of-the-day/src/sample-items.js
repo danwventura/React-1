@@ -5,7 +5,7 @@ const items = {
     image: "/images/opera.jpg",
     desc:
       "Layers of thin cake and coffee buttercream, topped with ganache.",
-    price: 10,
+    price: 1000,
     status: "available"
   },
 
@@ -47,7 +47,7 @@ const items = {
 
   item6: {
     name: "Financier",
-    image: "/images/financier.jpg",
+    image: "/images/financier.jpeg",
     desc:
       "A classic French patisserie made with almond flour and butter, flavored with vanilla and topped with a slice of strawberry",
     price: 400,

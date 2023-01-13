@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
+import Item from './Item';
 import sampleItems from '../sample-items';
 
 class App extends React.Component {
@@ -26,6 +27,9 @@ class App extends React.Component {
                 <div className='catch-of-the-day'>
                     <div className='menu'>
                         <Header tagline="Fresh Baked Daily!"/>
+                        <ul className='fishes'>
+                            {Object.keys(this.state.items).map(key => <Item key={key} details={this.state.items[key]}/>)}
+                        </ul>
                     </div>
                     <Order/>
                     <Inventory loadSampleItems={this.loadSampleItems} addItem={this.addItem}/>
