@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
-
+import sampleItems from '../sample-items';
 
 class App extends React.Component {
     state = {
@@ -17,6 +17,9 @@ class App extends React.Component {
         //3. Set new items object to state
         this.setState({items})
     }
+    loadSampleItems = () =>{
+        this.setState({items: sampleItems})
+    }
     render() {
         return(
             <div>
@@ -25,7 +28,7 @@ class App extends React.Component {
                         <Header tagline="Fresh Baked Daily!"/>
                     </div>
                     <Order/>
-                    <Inventory addItem={this.addItem}/>
+                    <Inventory loadSampleItems={this.loadSampleItems} addItem={this.addItem}/>
                 </div>
             </div>
         )

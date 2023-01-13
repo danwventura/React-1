@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = (props) => (
         <header className='top'>
-            <h1>Breads 
+            <h1>Treats 
                 <span className='ofThe'>
                     <span className='of'> of</span>
                     <span className='the'> the</span>    
