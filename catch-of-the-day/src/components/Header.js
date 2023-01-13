@@ -2,11 +2,11 @@ import React from 'react';
 
 const Header = (props) => (
         <header className='top'>
-            <h1>Treats 
+            <h1>Cr&#233;me
                 <span className='ofThe'>
-                    <span className='of'> of</span>
-                    <span className='the'> the</span>    
-                </span> Gods</h1>
+                    <span className='of'> de</span>
+                    <span className='the'> la</span>    
+                </span> Crumb</h1>
             <h3 className='tagline'>
                 <span>{props.tagline}</span>
             </h3>
