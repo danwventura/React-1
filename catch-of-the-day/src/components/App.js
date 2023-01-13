@@ -5,6 +5,18 @@ import Inventory from './Inventory';
 
 
 class App extends React.Component {
+    state = {
+        items: {},
+        order: {}
+    };
+    addItem = (item) => {
+        //1. Take a copy of existing state
+        const items = {...this.state.items};
+        //2. Add our new item to the items variable
+        items[`item${Date.now()}`] = item;
+        //3. Set new items object to state
+        this.setState({items})
+    }
     render() {
         return(
             <div>
@@ -13,7 +25,7 @@ class App extends React.Component {
                         <Header tagline="Fresh Baked Daily!"/>
                     </div>
                     <Order/>
-                    <Inventory/>
+                    <Inventory addItem={this.addItem}/>
                 </div>
             </div>
         )
