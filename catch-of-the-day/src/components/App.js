@@ -4,12 +4,26 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Item from './Item';
 import sampleItems from '../sample-items';
+import base from '../base';
 
 class App extends React.Component {
     state = {
         items: {},
         order: {}
     };
+
+    componentDidMount(){
+        const { params } = this.props.match;
+        this.ref = base.syncState(`${params.storeId}/items`, {
+            context: this,
+            state: 'items'
+        });
+    }
+
+    componentWillUnmount(){
+        base.removeBinding(this.ref);
+    }
+
     addItem = (item) => {
         //1. Take a copy of existing state
         const items = {...this.state.items};
