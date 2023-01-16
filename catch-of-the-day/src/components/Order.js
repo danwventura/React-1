@@ -5,7 +5,9 @@ class Order extends React.Component{
     renderOrder = key => {
         const item = this.props.items[key];
         const count = this.props.order[key];
-        const isAvailable = item.status === 'available'
+        const isAvailable = item && item.status === 'available'
+        //Make sure the item is loaded before we continue
+        if(!item) return null;
         if(!isAvailable){
             return<li key={key}>
                 Sorry {item ? item.name : 'item'} is no longer available
